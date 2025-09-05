@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
-  metadataBase: new URL(process.env.APP_URL as string),
+  metadataBase: new URL(process.env.APP_URL || "https://example.com"),
   openGraph: {
     type: "website",
     siteName: "SITE_NAME",
