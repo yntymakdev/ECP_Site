@@ -1,0 +1,47 @@
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 100%;
+  max-width: 260px;
+  height: 160px;
+
+  border: 2px solid #ebebeb;
+  border-radius: 12px;
+
+  padding: 20px; // <-- внутренние отступы (top/right/bottom/left)
+  margin: 10px auto; // <-- внешние отступы сверху и снизу
+
+  .percent {
+    font-size: 24px;
+    font-weight: 800;
+    color: #16a34a; // зелёный
+    margin-bottom: auto; // чтобы текст ушёл вниз
+  }
+
+  .text {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: auto; // чтобы прижать к низу
+  }
+}

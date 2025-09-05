@@ -1,0 +1,284 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  max-width: 1280px;
+  // margin-inline: auto;
+  // padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+}
+* {
+  box-sizing: border-box;
+}
+.segmented-wrapper {
+  // display: flex;
+  // justify-content: center;
+  // margin: 1rem 0;
+}
+
+.controls {
+  --highlight-width: auto;
+  --highlight-x-pos: 0;
+
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  background: #ebebeb;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 4px;
+  margin: 0 2px;
+  overflow: hidden;
+  position: relative;
+  max-width: 200px; // адаптивно: на десктопах ограничим
+  min-width: 160px;
+}
+
+.controls input {
+  opacity: 0;
+  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  cursor: pointer;
+  height: 100%;
+}
+
+.segment {
+  flex: 1; // все сегменты равные
+  min-width: 50px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+
+  label {
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    color: gray;
+    padding: 6px 6px; // выше и шире
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+  }
+
+  &.active label {
+    color: #0a0a0a;
+  }
+}
+
+.controls::before {
+  content: "";
+  background: #ffffff;
+  border-radius: 8px;
+  width: var(--highlight-width);
+  transform: translateX(var(--highlight-x-pos));
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 0;
+  z-index: 0;
+}
+
+.controls.ready::before {
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+.asas {
+  display: flex;
+  flex-direction: column; /* ставим элементы сверху вниз */
+  justify-content: center; /* центр по вертикали */
+  align-items: center; /* центр по горизонтали */
+  padding: 20px;
+  width: 380px;
+  border-radius: 10px;
+  border: solid #ebebeb 2px;
+  text-align: center; /* чтобы текст был по центру */
+}
+.text_as {
+  font-family: "Arimo", sans-serif;
+  font-weight: 700; /* жирный */
+  font-size: 15px;
+  line-height: 120%; /* межстрочный интервал */
+  letter-spacing: -0.02em; /* -2% лучше задавать в em */
+  text-align: center;
+  margin-top: 10px; /* небольшой отступ от картинки */
+}
+
+.as {
+  display: flex;
+}
+.as {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  gap: 20px; /* расстояние между блоками */
+  max-width: 1200px; /* можно ограничить ширину */
+  margin: 0 auto; /* по центру */
+}
+
+.asas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #ebebeb;
+  text-align: center;
+}
+
+.asas h1 {
+  font-family: "Arimo", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-top: 10px;
+}
+.all_box {
+  display: flex;
+  flex-wrap: wrap; // перенос на новую строку при маленьком экране
+  justify-content: center; // по центру
+  gap: 24px; // расстояние между карточками
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.all_box .box {
+  flex: 1 1 calc(25% - 24px);
+  max-width: 300px; // сделал шире
+  border: 3px solid #ebebeb;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 110px; // ниже, как в дизайне
+}
+
+.all_box .box p {
+  font-size: 14px;
+  line-height: 1.5; // увеличил расстояние между строками
+  word-break: keep-all; // не ломать слова
+  overflow-wrap: break-word; // переносить при необходимости
+  color: #374151;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .all_box .box {
+    flex: 1 1 calc(33.333% - 24px); // 3 колонки
+    max-width: calc(33.333% - 24px);
+  }
+}
+
+@media (max-width: 768px) {
+  .all_box .box {
+    flex: 1 1 calc(50% - 24px); // 2 колонки
+    max-width: calc(50% - 24px);
+  }
+}
+
+@media (max-width: 480px) {
+  .all_box .box {
+    flex: 1 1 100%; // 1 колонка
+    max-width: 100%;
+  }
+}
+
+.block {
+  p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #000000b2;
+    letter-spacing: 0%;
+  }
+  h1 {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 32px;
+    color: #039855;
+    line-height: 120%;
+    letter-spacing: -2%;
+  }
+}
+.contact_block {
+  display: flex;
+  flex-wrap: wrap; // Allow wrapping on small screens
+  justify-content: space-between;
+  gap: 20px; // Space between blocks
+  margin-top: 2rem;
+
+  // For small devices stack vertically
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+.icon_ic {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start; // Align icon and text to the left on larger screens
+  flex: 1 1 30%; // Each block takes about 30% width but grows or shrinks
+
+  p {
+    font-weight: bolder;
+    margin: 0; // Remove default margins for consistent spacing
+  }
+
+  // Center on small screens
+  @media (max-width: 768px) {
+    justify-content: center;
+    text-align: center;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

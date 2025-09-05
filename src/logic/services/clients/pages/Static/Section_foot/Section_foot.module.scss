@@ -1,0 +1,48 @@
+.section {
+  padding: 3rem 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border: 2px solid #ebebeb;
+  border-radius: 12px;
+  min-height: 160px;
+  text-align: left;
+  background: #fff;
+
+  img {
+    flex-shrink: 0;
+  }
+
+  h1 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  /* планшет и выше — иконка сверху */
+  @media (min-width: 640px) {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,59 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* на планшете и меньше — в колонку */
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+.about {
+  max-width: 500px;
+
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 12px;
+
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+
+    @media (max-width: 480px) {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  }
+}
+
+.header img {
+  max-width: 100%;
+  height: auto;
+
+  @media (max-width: 480px) {
+    width: 260px; /* уменьшить телефон */
+  }
+}
+
+.about {
+  img {
+    display: none;
+  }
+}

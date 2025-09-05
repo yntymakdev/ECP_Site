@@ -1,0 +1,108 @@
+.header {
+  padding-top: 30px;
+  background: url("./img/bg-pattern.svg") no-repeat center top;
+  background-size: 80%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    min-height: auto; // allow height to be flexible on smaller devices
+    padding-top: 20px;
+    flex-direction: column;
+  }
+}
+
+.head_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  @media (max-width: 992px) {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+.home_section {
+  h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.2;
+    margin-bottom: 20px;
+
+    @media (max-width: 576px) {
+      font-size: 22px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+
+    @media (max-width: 576px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.all_img {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+
+  @media (max-width: 576px) {
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+.img_t {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px;
+  padding: 10px;
+
+  img {
+    max-width: 110px;
+    height: auto;
+
+    @media (max-width: 576px) {
+      max-width: 90px;
+    }
+  }
+}
+
+.im_phone {
+  position: relative;
+  width: 100%;
+  max-width: 550px; // max width rather than fixed width
+  height: auto; // auto height to maintain aspect ratio
+  aspect-ratio: 1 / 1; // keep square ratio
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    max-width: 350px; // smaller on tablets
+  }
+
+  @media (max-width: 576px) {
+    max-width: 300px; // smaller on small phones
+  }
+}
+
+.phone_img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}

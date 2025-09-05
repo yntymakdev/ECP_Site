@@ -1,0 +1,132 @@
+.header_btn_two {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f5f5f5;
+  color: black;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background: #e5e5e5;
+  }
+
+  .btn_icon {
+    font-size: 16px;
+  }
+
+  /* планшет */
+  @media (max-width: 768px) {
+    transform: scale(0.9);
+    transform-origin: center;
+  }
+
+  /* мобильный */
+  @media (max-width: 480px) {
+    transform: scale(0.8);
+    font-size: 10px;
+  }
+
+  /* очень маленькие экраны (320px) */
+  @media (max-width: 360px) {
+    transform: scale(0.7);
+    transform-origin: center;
+  }
+}
+
+/* переключатель языка */
+.lang_switcher {
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #f5f5f5;
+  font-weight: 600;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  /* для маленьких телефонов (320px) */
+  @media (max-width: 360px) {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+}
+.lang_switcher {
+  display: inline-block;
+  font-size: 14px;
+  transform: scale(1); // базовый размер
+  transform-origin: center;
+
+  @media (max-width: 768px) {
+    transform: scale(0.9);
+  }
+
+  @media (max-width: 480px) {
+    transform: scale(0.8);
+  }
+
+  @media (max-width: 360px) {
+    transform: scale(0.7); // уменьшится на 30%
+  }
+}
+
+/* контейнер шапки */
+.head_home {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 480px) {
+  }
+
+  @media (max-width: 360px) {
+    flex-direction: column; // если не влезает в строку
+  }
+}
+
+/* правый блок (где кнопки/переключатель языка) */
+.head_right {
+  display: flex;
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    gap: 16px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 10px;
+    font-size: 10px;
+  }
+}
+/* Обертка переключателя языка */
+.segment {
+  transform: scale(1); // обычный размер
+  transform-origin: center; // чтобы уменьшался из центра
+
+  @media (max-width: 768px) {
+    transform: scale(0.9);
+  }
+
+  @media (max-width: 480px) {
+    transform: scale(0.6);
+  }
+
+  @media (max-width: 360px) {
+    transform: scale(0.7);
+  }
+}
