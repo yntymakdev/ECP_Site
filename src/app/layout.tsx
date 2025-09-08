@@ -23,8 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.APP_URL || "https://example.com"),
   openGraph: {
     type: "website",
-    siteName: "SITE_NAME",
-    emails: ["info@ticket.com"],
+    siteName: "ЕРЦ — все коммунальные услуги в одном приложении",
   },
 };
 

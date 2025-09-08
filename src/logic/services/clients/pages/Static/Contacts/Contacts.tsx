@@ -3,6 +3,7 @@ import React from "react";
 import { MapPin, Phone, Mail } from "lucide-react";
 import s from "../../Header/Header.module.scss";
 import { FormattedMessage } from "react-intl";
+
 const Contacts = () => {
   return (
     <section className="py-12">
@@ -11,77 +12,81 @@ const Contacts = () => {
           <FormattedMessage id="contact" />
         </h2>
         <br />
-        <br />
         {/* Карта Google Maps */}
         <div className="w-full h-[350px] rounded-2xl overflow-hidden mb-8 shadow-lg">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2922.0011783033296!2d74.59447611546577!3d42.8746119791568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb7df6f4d3c05%3A0x2a62d36a5b9139e0!2sIbraimov%20St%20103%2C%20Bishkek%2C%20Kyrgyzstan!5e0!3m2!1sen!2skg!4v1693936400000!5m2!1sen!2skg"
-            width="100%"
-            height="100%"
-            allowFullScreen
-            loading="lazy"
-            className="w-full h-full"
-          ></iframe>
+          <div className="w-full h-[350px] rounded-2xl overflow-hidden mb-8 shadow-lg">
+            <iframe
+              src="https://www.google.com/maps?q=42.87696,7 Я4.61127&hl=ru&z=17&output=embed"
+              width="100%"
+              height="100%"
+              allowFullScreen
+              loading="lazy"
+              className="w-full h-full rounded-2xl shadow-lg"
+            />
+          </div>
+
+          <div className="w-full h-[350px] rounded-2xl overflow-hidden mb-8 shadow-lg">
+            <iframe
+              src="https://www.google.com/maps?q=42.87696,74.61127&hl=ru&z=17&output=embed"
+              width="100%"
+              height="100%"
+              allowFullScreen
+              loading="lazy"
+              className="w-full h-full rounded-2xl shadow-lg"
+            />
+          </div>
         </div>
 
         {/* Кнопка «Проложить маршрут» */}
-        <br />
+        {/* Кнопка «Проложить маршрут» */}
+        <a
+          href="https://www.google.com/maps/dir/?api=1&destination=42.87696,74.61127"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${s.header_btn_two} inline-block px-6 py-3 font-semibold rounded-2xl shadow-md transition`}
+        >
+          <FormattedMessage id="route" />
+        </a>
 
-        <div className="text-center mb-12">
-          <button className={s.header_btn_two}>
-            <a
-              href="https://www.google.com/maps/dir/?api=1&destination=ул.Ибраимова+103,+Бишкек"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-3   font-semibold    transition"
-            >
-              <FormattedMessage id="route" />
-            </a>
-          </button>
-        </div>
         <br />
         <br />
         {/* Инфо-блоки */}
-        <div className="contact_block">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Адрес */}
-          <div className="icon_ic">
-            <MapPin className="w-8 h-8 text-blue-600" />
-            <div>
-              <h3 className="text-lg font-semibold">
-                <FormattedMessage id="contact_address_title" />
-              </h3>
-              <p>
-                г<FormattedMessage id="contact_address_text" />
-              </p>
-            </div>
+          <div className="flex flex-col items-center text-center p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+            <MapPin className="w-10 h-10 text-blue-600 mb-3" />
+            <h3 className="text-lg font-semibold mb-1">
+              <FormattedMessage id="contact_address_title" />
+            </h3>
+            <p>
+              <FormattedMessage id="contact_address_text" />
+            </p>
           </div>
 
           {/* Телефон */}
-          <div className="icon_ic">
-            <Phone className="w-8 h-8 text-blue-600" />
-            <div>
-              <h3 className="text-lg font-semibold">
-                <FormattedMessage id="contact_phone_title" />
-              </h3>
-              <p>
+          <div className="flex flex-col items-center text-center p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+            <Phone className="w-10 h-10 text-blue-600 mb-3" />
+            <h3 className="text-lg font-semibold mb-1">
+              <FormattedMessage id="contact_phone_title" />
+            </h3>
+            <p>
+              <a href="tel:+996500000000" className="text-blue-600 hover:underline">
                 <FormattedMessage id="contact_phone_text" />
-              </p>
-            </div>
+              </a>
+            </p>
           </div>
 
           {/* Email */}
-          <div className="icon_ic">
-            <Mail className="w-8 h-8 text-blue-600" />
-            <div>
-              <h3 className="text-lg font-semibold">
-                {" "}
-                <FormattedMessage id="contact_email_title" />
-              </h3>
-              <p>
-                {" "}
+          <div className="flex flex-col items-center text-center p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+            <Mail className="w-10 h-10 text-blue-600 mb-3" />
+            <h3 className="text-lg font-semibold mb-1">
+              <FormattedMessage id="contact_email_title" />
+            </h3>
+            <p>
+              <a href="mailto:example@mail.com" className="text-blue-600 hover:underline">
                 <FormattedMessage id="contact_email_text" />
-              </p>
-            </div>
+              </a>
+            </p>
           </div>
         </div>
       </div>
