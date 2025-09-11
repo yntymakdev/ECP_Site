@@ -21,10 +21,6 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   metadataBase: new URL(process.env.APP_URL || "https://example.com"),
-  openGraph: {
-    type: "website",
-    siteName: "ЕРЦ — все коммунальные услуги в одном приложении",
-  },
 };
 
 export default function RootLayout({
