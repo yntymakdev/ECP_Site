@@ -87,6 +87,7 @@ const Contacts = () => {
                 <FormattedMessage id="contact_email_text" />
               </a>
             </p>
+            <br />
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { FormattedMessage } from "react-intl";
 const Footer = () => {
   return (
     <footer className="bg-[#0F4C64] text-white py-8">
+      <br />
       <div className="container mx-auto px-4">
         {/* Название компании */}
         <div className="mb-6 mt-8">
@@ -52,43 +53,36 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Ссылки на открытие .docx документов */}
-        <div className="mt-8 flex justify-between flex-wrap gap-4">
-          <a
-            href="https://docs.google.com/document/d/1u6S69BFgMUjN3gM3J5o14VBX_BKAV_Nx/edit?usp=sharing&ouid=109456113715104531439&rtpof=true&sd=true"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-[#00B8D8] transition-colors duration-300 text-lg font-medium py-3 px-6 rounded-lg border-2 border-transparent hover:border-[#00B8D8] hover:bg-[#0D3B4D]"
-          >
-            Открыть оферту
-          </a>
-
-          <a
-            href="https://docs.google.com/document/d/1yuieP8dob5wq_QN9Sz9l-MjNZXbZ4kgG/edit?usp=sharing&ouid=109456113715104531439&rtpof=true&sd=true"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-[#00B8D8] transition-colors duration-300 text-lg font-medium py-3 px-6 rounded-lg border-2 border-transparent hover:border-[#00B8D8] hover:bg-[#0D3B4D]"
-          >
-            Политика Конфиденциальности
-          </a>
-
-          <a
-            href="https://docs.google.com/document/d/1GCa0Tj3_cX_t528Zdrd-zSjWq5emccdX/edit?usp=sharing&ouid=109456113715104531439&rtpof=true&sd=true"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-[#00B8D8] transition-colors duration-300 text-lg font-medium py-3 px-6 rounded-lg border-2 border-transparent hover:border-[#00B8D8] hover:bg-[#0D3B4D]"
-          >
-            Согласие на обработку данных
-          </a>
-
-          <a
-            href="https://docs.google.com/document/d/1ltznEZX9lL7bYzVqCis2H5YF9L-XBHVj/edit?usp=sharing&ouid=109456113715104531439&rtpof=true&sd=true"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-[#00B8D8] transition-colors duration-300 text-lg font-medium py-3 px-6 rounded-lg border-2 border-transparent hover:border-[#00B8D8] hover:bg-[#0D3B4D]"
-          >
-            Соглашение
-          </a>
+        {/* Ссылки на документы */}
+        <div className="mt-8 flex flex-col gap-3">
+          {[
+            {
+              href: "https://docs.google.com/document/d/1u6S69BFgMUjN3gM3J5o14VBX_BKAV_Nx/edit?usp=sharing&ouid=109456113715104531439&rtpof=true&sd=true",
+              label: "Открыть оферту",
+            },
+            {
+              href: "https://docs.google.com/document/d/1yuieP8dob5wq_QN9Sz9l-MjNZXbZ4kgG/edit?usp=sharing&ouid=109456113715104531439&rtpof=true&sd=true",
+              label: "Политика конфиденциальности",
+            },
+            {
+              href: "https://docs.google.com/document/d/1GCa0Tj3_cX_t528Zdrd-zSjWq5emccdX/edit?usp=sharing&ouid=109456113715104531439&rtpof=true&sd=true",
+              label: "Согласие на обработку данных",
+            },
+            {
+              href: "https://docs.google.com/document/d/1ltznEZX9lL7bYzVqCis2H5YF9L-XBHVj/edit?usp=sharing&ouid=109456113715104531439&rtpof=true&sd=true",
+              label: "Соглашение",
+            },
+          ].map((doc, idx) => (
+            <a
+              key={idx}
+              href={doc.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white italic border-b border-gray-300 hover:text-[#00B8D8] transition-colors duration-300 py-1"
+            >
+              {doc.label}
+            </a>
+          ))}
         </div>
       </div>
     </footer>
