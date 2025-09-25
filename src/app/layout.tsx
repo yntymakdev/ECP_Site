@@ -35,6 +35,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        {/* ✅ Добавляем сюда метатег для Facebook */}
+        <meta name="facebook-domain-verification" content="wu2ejviwbs2j8jqmb1r1bxqhwnhznf" />
+      </head>
       <body
         className={`${geistSans.variable} 
       ${geistMono.variable} antialiased`}
