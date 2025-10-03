@@ -41,14 +41,14 @@ const Header = () => {
                 ]}
               />
             </div>
-            <div className={s.btn_home}>
+            {/* <div className={s.btn_home}>
               <Link href={"https://wa.me/996557223322"}>
                 <button className={s.header_btn_two}>
                   <Image src={whatsapp_icon} alt="Whatsapp" width={20} height={20} className={s.btn_icon} />
                   <span>Whatsapp Bot</span>
                 </button>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
