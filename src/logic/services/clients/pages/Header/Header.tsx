@@ -13,7 +13,7 @@ const Header = () => {
 
   const handleLangChange = (val: string) => {
     if (val === "first") setLocale("ru");
-    if (val === "second") setLocale("en");
+    // if (val === "second") setLocale("en");
     if (val === "third") setLocale("kg");
   };
 
@@ -36,7 +36,7 @@ const Header = () => {
                 defaultIndex={locale === "ru" ? 0 : locale === "en" ? 1 : 2}
                 segments={[
                   { label: "RU", value: "first", ref: useRef<HTMLDivElement>(null) },
-                  { label: "EN", value: "second", ref: useRef<HTMLDivElement>(null) },
+                  // { label: "EN", value: "second", ref: useRef<HTMLDivElement>(null) },
                   { label: "KG", value: "third", ref: useRef<HTMLDivElement>(null) },
                 ]}
               />
