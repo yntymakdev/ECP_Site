@@ -50,8 +50,18 @@ const HeroSection = () => {
                 </Link>
 
                 {/* App Store */}
-                <Link href={"https://apps.apple.com/kg/app/%D0%B5%D1%80%D1%86/id6751805985"} className={s.btn_icon_a}>
-                  <Image src={badge_two} alt="App Store" width={200} height={60} className={s.btn_icon_a} />
+                {/* App Store */}
+                {/* Вместо картинки - обычная кнопка */}
+                {/* App Store - указываем точный размер */}
+                {/* App Store - КНОПКА вместо картинки */}
+                <Link href={"https://apps.apple.com/kg/app/%D0%B5%D1%80%D1%86/id6751805985"}>
+                  <Image
+                    src={badge_two}
+                    alt="App Store"
+                    width={180}
+                    height={40}
+                    style={{ width: "100%", height: "auto", maxWidth: "130px" }}
+                  />
                 </Link>
               </div>
             </div>

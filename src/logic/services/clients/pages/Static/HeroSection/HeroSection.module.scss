@@ -61,8 +61,12 @@
   align-items: center;
   gap: 16px;
 
-  @media (max-width: 576px) {
+  @media (max-width: 992px) {
     justify-content: center;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
     gap: 12px;
   }
 }
@@ -75,26 +79,23 @@
   margin: 10px;
   padding: 10px;
 
-  // выравнивание ссылки App Store как кнопки
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 200px;
-    height: 45px;
-    text-decoration: none; // убрать подчеркивание
-  }
-
-  a img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  @media (max-width: 992px) {
+    align-items: flex-start;
+    margin: 0 auto;
   }
 
   @media (max-width: 768px) {
-    align-items: flex-start;
+    align-items: center;
+    margin: 0 auto;
   }
 
+  @media (max-width: 576px) {
+    align-items: center;
+    margin: 0 auto;
+    padding: 5px;
+  }
+
+  // Общие стили для кнопок
   button {
     display: flex;
     align-items: center;
@@ -111,15 +112,40 @@
       height: 24px;
     }
   }
+
+  // Ссылка App Store - простая ссылка без стилей
+  a {
+    display: block;
+    width: 200px;
+    height: 45px;
+    text-decoration: none;
+
+    img {
+      width: 200px;
+      height: 45px;
+      object-fit: contain;
+    }
+  }
+}
+.img_t a img {
+  display: inline-block !important;
+  width: 200px !important;
+  height: 45px !important;
+}
+// Класс для QR кода (если нужно скрыть на мобилке)
+.all_img > .img {
+  @media (max-width: 576px) {
+    display: none; // Скрыть QR на маленьких экранах
+  }
 }
 
 .im_phone {
-  position: relative;
-  width: 100%;
-  max-width: 550px;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  flex-shrink: 0;
+  // position: relative;
+  // width: 100%;
+  // max-width: 550px;
+  // height: auto;
+  // aspect-ratio: 1 / 1;
+  // flex-shrink: 0;
 
   @media (max-width: 768px) {
     max-width: 350px;
@@ -128,27 +154,13 @@
   @media (max-width: 576px) {
     max-width: 300px;
   }
+
+  img {
+    // object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
 }
 
-.phone_img {
-  object-fit: contain;
-  width: 100%;
-  height: 100%;
-}
-.app_badge {
-  display: block; // ссылка ведёт себя как блок
-  width: 200px; // та же ширина, что и кнопки
-  height: 45px; // та же высота
-  margin: 0; // убрать любые внешние отступы
-  padding: 0; // убрать внутренние отступы
-}
-.app_badge img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block; // чтобы изображение точно не центрировалось
-}
-
-.btn_icon_a {
-  margin-left: 100px;
-}
+// Убрал эти классы, они не нужны
+// .phone_img, .app_badge, .btn_icon_a больше не используются
