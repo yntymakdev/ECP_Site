@@ -35,7 +35,7 @@ const HeroSection = () => {
 
               {/* Кнопки и App Store */}
               <div className={hero_section.img_t}>
-                <Link href={"https://wa.me/996557223322"}>
+                <Link href={"https://wa.me/+996557223322?text=%D0%9D%D0%B0%D1%87%D0%B0%D1%82%D1%8C"}>
                   <button className={s.header_btn_two}>
                     <Image src={whatsapp_icon} alt="Whatsapp" width={20} height={20} className={s.btn_icon} />
                     <span>Whatsapp Bot</span>
