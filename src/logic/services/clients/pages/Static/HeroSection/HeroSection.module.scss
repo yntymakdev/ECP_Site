@@ -55,11 +55,12 @@
     }
   }
 }
-
 .all_img {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
 
   @media (max-width: 992px) {
     justify-content: center;
@@ -67,66 +68,73 @@
 
   @media (max-width: 576px) {
     flex-direction: column;
-    gap: 12px;
+    gap: 20px;
   }
 }
 
-.img_t {
+.qr_block {
   display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  align-items: flex-start;
-  margin: 10px;
-  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 180px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 
-  @media (max-width: 992px) {
-    align-items: flex-start;
-    margin: 0 auto;
-  }
-
-  @media (max-width: 768px) {
-    align-items: center;
-    margin: 0 auto;
+  img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
   }
 
   @media (max-width: 576px) {
-    align-items: center;
-    margin: 0 auto;
-    padding: 5px;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.buttons_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  width: 180px; /* чтобы было одинаково с QR */
+  min-height: 180px; /* чтобы блок был равен по высоте */
+  padding: 10px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+
+  @media (max-width: 576px) {
+    width: 150px;
+    min-height: auto;
   }
 
-  // Общие стили для кнопок
   button {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
-    width: 200px;
-    height: 45px;
-    border-radius: 10px;
-    font-size: 16px;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 14px;
     transition: 0.3s;
 
     img {
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
     }
   }
 
-  // Ссылка App Store - простая ссылка без стилей
-  a {
-    display: block;
-    width: 200px;
-    height: 45px;
-    text-decoration: none;
-
-    img {
-      width: 200px;
-      height: 45px;
-      object-fit: contain;
-    }
+  a img {
+    width: 100%;
+    height: 40px;
+    object-fit: contain;
   }
 }
+
 .img_t a img {
   display: inline-block !important;
   width: 200px !important;

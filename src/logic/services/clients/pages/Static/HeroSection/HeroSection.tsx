@@ -10,6 +10,7 @@ import qr_code from "./img/photo_2025-10-03_16-28-12.jpg";
 import badge_android from "./img/android-head_3D.svg";
 import iphone_im from "./img/Free_iPhone_13_Mockup_4 (2) 1.svg";
 import badge_two from "./img/Badge (1).svg";
+import badge from "./img/Badge.svg";
 import whatsapp_icon from "../../Header/img/logos_whatsapp-icon.svg";
 
 const HeroSection = () => {
@@ -28,13 +29,13 @@ const HeroSection = () => {
             </div>
 
             <div className={hero_section.all_img}>
-              {/* QR Code */}
-              <div className="img">
-                <Image src={qr_code} alt="QR Code" width={150} height={150} />
+              {/* Левая часть — QR-код */}
+              <div className={hero_section.qr_block}>
+                <Image src={qr_code} alt="QR Code" width={180} height={180} />
               </div>
 
-              {/* Кнопки и App Store */}
-              <div className={hero_section.img_t}>
+              {/* Правая часть — кнопки */}
+              <div className={hero_section.buttons_block}>
                 <Link href={"https://wa.me/+996557223322?text=%D0%9D%D0%B0%D1%87%D0%B0%D1%82%D1%8C"}>
                   <button className={s.header_btn_two}>
                     <Image src={whatsapp_icon} alt="Whatsapp" width={20} height={20} className={s.btn_icon} />
@@ -42,26 +43,19 @@ const HeroSection = () => {
                   </button>
                 </Link>
 
-                <Link href={"https://ners.billing.kg/android-download/app-release.apk"}>
+                {/* <Link href={"https://play.google.com/store/apps/details?id=kg.mycloud.nssc"}>
                   <button className={s.header_btn_two}>
                     <Image src={badge_android} alt="Android" width={20} height={20} className={s.btn_icon} />
                     <span>Скачать Android</span>
                   </button>
+                </Link> */}
+
+                <Link href={"https://apps.apple.com/kg/app/%D0%B5%D1%80%D1%86/id6751805985"}>
+                  <Image src={badge_two} alt="App Store" width={200} height={45} />
                 </Link>
 
-                {/* App Store */}
-                {/* App Store */}
-                {/* Вместо картинки - обычная кнопка */}
-                {/* App Store - указываем точный размер */}
-                {/* App Store - КНОПКА вместо картинки */}
-                <Link href={"https://apps.apple.com/kg/app/%D0%B5%D1%80%D1%86/id6751805985"}>
-                  <Image
-                    src={badge_two}
-                    alt="App Store"
-                    width={180}
-                    height={40}
-                    style={{ width: "100%", height: "auto", maxWidth: "130px" }}
-                  />
+                <Link href={"https://play.google.com/store/apps/details?id=kg.mycloud.nssc"}>
+                  <Image src={badge} alt="App Store" width={200} height={45} />
                 </Link>
               </div>
             </div>
